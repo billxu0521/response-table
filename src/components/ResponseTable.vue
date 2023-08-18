@@ -1,23 +1,36 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 //偵測解析度
-const currentWindorWidth = window.innerWidth;
-console.log(currentWindorWidth);
+const currentWindorWidth = ref(null);
 const mode = ref('desktop');
-if(currentWindorWidth > 764){
-  console.log('桌機');
-  mode.value = 'desktop';
-}else{
-  console.log('行動裝置');
-  mode.value = 'mobile';
+
+const handleResize = () => {
+    currentWindorWidth.value = window.innerWidth
+    if(currentWindorWidth < 764){
+      mode.value = 'mobile';
+    }else{
+      mode.value = 'desktop';
+    }
+    console.log(currentWindorWidth.value);
 }
 
+onMounted(() => {
+    window.addEventListener('resize', handleResize)
+})
 
+onUnmounted(() => {
+    window.removeEventListener('resize', handleResize)
+})
 </script>
 
 <template>
-測試
+  <div v-if="mode == 'desktop'">
+    桌機模式
+  </div>
+  <div v-if="mode == 'mobile'">
+    行動模式
+  </div>
 </template>
 
 <style scoped>

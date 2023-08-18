@@ -4,39 +4,28 @@
 可以依照裝置螢幕切換表格模式
 </p>
 
+# 說明
+可以依照裝置螢幕切換表格模式
 
-## Init
+這個表格會依照螢幕解析度，自動切換不同表格模式
+- 桌機模式：桌機模式的欄位標題於上方，資料於下方條列
+- 表格模式：行動模式的欄位標題於左方，資料於右方條列
+
+判斷螢幕寬度預設為 768 px
+
+# 安裝
 ```
-npm install
+npm install response-table
 ```
 
-## Build
+# 使用方式
 ```
-npm run build
-```
-
-
-
+<ResponseTable :data="tableData" :label="" style="width: 100%" />
 ```
 
-<ResponseTable :data="tableData" style="width: 100%" >
-    <ResponseTableColumn prop="date" label="Date" width="180" />
-    <ResponseTableColumn prop="name" label="Name" width="180" />
-    <ResponseTableColumn prop="address" label="Address" />
-</ResponseTable>
+## 參數說明
 
+## 範例
+example/responseTable.html
 
-<templete v-if="isDesTop">
-//桌機
-<ResponseTableDesTop >
-    <ResponseTableColumnDesTop>
-</ResponseTableDesTop>
-<templete v-if="isMobile">
-</templete>
-//行動
-<ResponseTableMobile>
-    <ResponseTableColumnMobile>
-</ResponseTableMobile>
-
-</templete>
-```
+# 授權

@@ -1,6 +1,6 @@
 {
-  "name": "vue3-workshop-template",
-  "version": "0.0.0",
+  "name": "vue3-response-table",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,9 @@
     "push": "git push && npm publish"
   },
   "type": "module",
-  "main": "dist/MyLibrary.cjs.js",
-  "module": "dist/MyLibrary.es.js",
-  "unpkg": "dist/MyLibrary.iife.js",
+  "main": "dist/ResponseTable.cjs.js",
+  "module": "dist/ResponseTable.es.js",
+  "unpkg": "dist/ResponseTable.iife.js",
   "files": [
     "dist"
   ],

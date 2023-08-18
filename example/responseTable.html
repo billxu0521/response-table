@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResponseTable example</title>
+    <!-- <link rel="stylesheet" href="../dist/index.css" /> -->
+  </head>
+  <body>
+    <div id="app" style="padding: 10px">
+        <!-- <ResponseTable :data="example" style="width: 100%" >
+            <ResponseTableColumn prop="name" label="名稱" width="180" />
+            <ResponseTableColumn prop="number" label="數字" />
+        </ResponseTable> -->
+        <ResponseTable />
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.prod.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import { createApp, ref } from "vue";
+      import { ResponseTable } from "../dist/ResponseTable.es.js";
+      createApp({
+        components: {
+            ResponseTable,
+        },
+        setup() {
+          const example = ref([
+            {
+              name : 'apple',
+              number : '0000000',
+            },
+            {
+              name : 'banana',
+              number : '00000212',
+            },
+            {
+              name : 'cat',
+              number : '3409218',
+            },
+            {
+              name : 'dog',
+              number : '123123',
+            },
+            {
+              name : 'egg',
+              number : '0000000',
+            },
+            {
+              name : 'fax',
+              number : '01230000',
+            },
+            {
+              name : 'goat',
+              number : '123123',
+            },
+            {
+              name : 'hawk',
+              number : '9008213',
+            },
+          ]);
+
+          return {
+            example
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
